@@ -1,0 +1,16 @@
+name: astrbot_plugin_doubao_search
+display_name: "豆包联网搜索与图片转发"
+desc: "让你的 AI 获得豆包联网搜索与相关图片转发能力。你可以用自然语言或中文命令搜索网页、筛选时效、获取带来源的摘要，或把 1-5 张公开图片直接发送到当前对话；插件会把搜索结果标记为不可信外部资料，并且不会把密钥或远端错误正文写进回执。"
+short_desc: "让你的 AI 使用豆包联网搜索，并把相关图片发送到当前对话"
+version: "0.3.0"
+astrbot_version: ">=4.26.7,<4.27"
+author: "羊魔大人"
+repo: "https://github.com/zjj1280637679-ship-it/astrbot_plugin_doubao_search"
+support_platforms:
+  - aiocqhttp
+tags:
+  - 豆包
+  - 联网搜索
+  - 图片搜索
+  - LLM 工具
+social_link: "https://github.com/zjj1280637679-ship-it"

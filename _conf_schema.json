@@ -1,0 +1,74 @@
+{
+  "enabled": {
+    "description": "【总开关】启用豆包联网搜索与图片转发",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后，网页搜索、图片搜索及其中文命令都只返回未执行回执，不会请求豆包接口。"
+  },
+  "enable_web_search": {
+    "description": "【能力】允许网页联网搜索",
+    "type": "bool",
+    "default": true,
+    "hint": "控制 web_search_doubao、/豆包搜索 和兼容旧命令；图片搜索不受此项影响。"
+  },
+  "enable_image_search": {
+    "description": "【能力】允许搜索并转发图片",
+    "type": "bool",
+    "default": true,
+    "hint": "控制 image_search_doubao、/豆包搜图 和兼容旧命令；网页搜索不会因为打开此项而自动附带图片。"
+  },
+  "api_key": {
+    "description": "【凭据】豆包搜索 API Key",
+    "type": "string",
+    "hint": "从火山引擎搜索控制台取得。也可以留空并通过环境变量 DOUBAO_SEARCH_API_KEY 提供；插件不会在日志或工具回执中输出密钥。",
+    "default": ""
+  },
+  "endpoint": {
+    "description": "【高级】豆包搜索 HTTPS 接口",
+    "type": "string",
+    "default": "https://open.feedcoopapi.com/search_api/web_search",
+    "hint": "默认使用官方接口。只接受不含账号密码的 HTTPS 地址，并拒绝明显的本机或内网 IP，避免凭据被意外发送到不安全端点。"
+  },
+  "default_count": {
+    "description": "【网页】默认返回结果数",
+    "type": "int",
+    "default": 5,
+    "hint": "范围 1-50；自然语言工具可以在单次调用中指定其他数量。"
+  },
+  "default_image_count": {
+    "description": "【图片】默认转发张数",
+    "type": "int",
+    "default": 3,
+    "hint": "范围 1-5；图片会在工具调用期间直接发送到当前对话，AI 只收到不含图片直链的结果回执。"
+  },
+  "need_summary": {
+    "description": "【网页】请求豆包生成结果摘要",
+    "type": "bool",
+    "default": true,
+    "hint": "摘要来自外部搜索结果，只作为资料，不应被 AI 当成系统指令或工具命令。"
+  },
+  "need_content": {
+    "description": "【网页】请求完整网页内容",
+    "type": "bool",
+    "default": false,
+    "hint": "默认关闭，避免不必要的响应体和上下文开销；即使开启，返回给 AI 的单条文本仍受摘要长度限制。"
+  },
+  "need_url": {
+    "description": "【网页】只保留带来源地址的结果",
+    "type": "bool",
+    "default": true,
+    "hint": "建议保持开启，方便 AI 和用户核对来源。"
+  },
+  "timeout_seconds": {
+    "description": "【网络】单次请求超时（秒）",
+    "type": "int",
+    "default": 30,
+    "hint": "安全范围 5-120；超时只返回结构化错误，不回显远端响应正文。"
+  },
+  "max_snippet_chars": {
+    "description": "【上下文】每条结果最大摘要字符数",
+    "type": "int",
+    "default": 1200,
+    "hint": "范围 200-8000；用于限制每条摘要或网页正文进入 AI 上下文的长度。"
+  }
+}

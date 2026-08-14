@@ -79,7 +79,7 @@
 
 ## 安装与兼容性
 
-- AstrBot：`>=4.26.7,<4.27`
+- AstrBot：`>=4.26.7`（不设版本上限）
 - 平台：`aiocqhttp`
 - Python 依赖：AstrBot 已使用的 `aiohttp`，无需额外安装
 
